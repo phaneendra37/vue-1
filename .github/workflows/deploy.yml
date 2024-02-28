@@ -39,7 +39,7 @@ jobs:
           git checkout -B build
 
           # Remove all files and folders except 'dist'
-          find . -maxdepth 1 ! -name 'dist' ! -path './.404*' ! -name '.git' -exec rm -r {} \;
+          find . -maxdepth 1 ! -name 'dist' ! -name '.git' -exec rm -r {} \;
 
           # Move all files and folders from inside 'dist' to the root
           mv dist/* .
