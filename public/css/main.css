@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.btn-primary {
+    @apply px-6 py-2 rounded border-2 border-neutral-900 bg-neutral-900 text-white text-sm font-semibold hover:bg-white hover:text-neutral-900 duration-500 transition-all capitalize
+}
+
+.btn-secondary {
+    @apply px-6 py-2 rounded border-2 border-neutral-900 hover:bg-neutral-900 hover:text-white text-sm font-semibold bg-white text-neutral-900 duration-500 transition-all capitalize
+}
