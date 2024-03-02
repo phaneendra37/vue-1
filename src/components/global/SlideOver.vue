@@ -102,7 +102,7 @@
               >
                 <!-- start of the header content  -->
                 <div v-if="isHeader" :class="headerClass">
-                  <slot :name="header">
+                  <slot name="header">
                     <h3 class="font-[700] text-sm text-white mb-1">
                       {{ title }}
                     </h3>
@@ -113,11 +113,11 @@
 
                 <!-- start of the body content -->
                 <div
-                  class="relative flex-1"
-                  :class="{ 'overflow-auto': !isSidebar, [bodyClass]: true }"
+                  class="relative flex-1 overflow-auto"
+                  :class="{ [bodyClass]: true }"
                 >
                   <!-- Render the body slot content -->
-                  <slot :name="body"></slot>
+                  <slot name="body"></slot>
                 </div>
                 <!-- end of the body content -->
 
@@ -128,7 +128,7 @@
                   class="flex justify-end items-center gap-x-3"
                 >
                   <!-- start of cancel slot -->
-                  <slot :name="footer" />
+                  <slot name="footer" />
                   <!-- end of cancel slot -->
 
                   <!--  start of cancel button -->
@@ -179,7 +179,7 @@ import {
   TransitionRoot,
 } from "@headlessui/vue";
 
-// Define slots
+// eslint-disable-next-line no-unused-vars
 const { body, header, footer } = defineSlots();
 
 // defining the emits
