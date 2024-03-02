@@ -1,0 +1,290 @@
+[
+    {
+        "inputType": "input",
+        "label": "Email",
+        "key": "email1",
+        "description": "This email is description is the email is description is the email is description is the",
+        "class": "",
+        "type": "email",
+        "required": true,
+        "placeholder": "Please enter the email",
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "gridClass": "col-span-12",
+        "disabled": false,
+        "value": "",
+        "icon": "bi bi-envelope-fill",
+        "iconPlacement": "left",
+        "groupType": "prepend",
+        "group": [
+            {
+                "inputType": "input",
+                "label": "Email",
+                "key": "email2",
+                "description": "This email is description is the email is description is the email is description is the",
+                "class": "",
+                "type": "email",
+                "required": true,
+                "placeholder": "Please enter the email",
+                "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                "disabled": false,
+                "value": ""
+            }
+        ]
+    },
+    {
+        "inputType": "input",
+        "label": "Name",
+        "key": "name",
+        "description": "This name is description is the name is description is the name is description is the",
+        "class": "",
+        "type": "text",
+        "required": true,
+        "placeholder": "Please enter the name",
+        "gridClass": "col-span-12",
+        "value": "",
+        "icon": "bi bi-envelope-fill",
+        "iconPlacement": "right",
+        "groupType": "append",
+        "group": [
+            {
+                "inputType": "input",
+                "label": "Email",
+                "key": "email3",
+                "description": "This email is description is the email is description is the email is description is the",
+                "class": "",
+                "type": "email",
+                "required": true,
+                "placeholder": "Please enter the email",
+                "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                "disabled": false,
+                "value": ""
+            },
+            {
+                "inputType": "select",
+                "label": "select",
+                "key": "emadsssss",
+                "description": "This email is description is the email is description is the email is description is the",
+                "class": "",
+                "type": "email",
+                "required": true,
+                "placeholder": "Please enter the email",
+                "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+                "gridClass": "col-span-12",
+                "disabled": false,
+                "value": "",
+                "rows": 4,
+                "resize": "none",
+                "cols": 4,
+                "options": [
+                    {
+                        "name": "Phaneendra",
+                        "value": "shane"
+                    },
+                    {
+                        "name": "Phaneendra1",
+                        "value": "shane1"
+                    },
+                    {
+                        "name": "Phaneendra2",
+                        "value": "shane2"
+                    },
+                    {
+                        "name": "Phaneendra3",
+                        "value": "shane3"
+                    },
+                    {
+                        "name": "Phaneendra4",
+                        "value": "shane4"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "inputType": "input",
+        "label": "Mobile Number",
+        "key": "mobilenumber",
+        "description": "This mobile number is description is the mobile number is description is the mobile number is description is the",
+        "class": "",
+        "type": "number",
+        "required": true,
+        "placeholder": "Please enter the mobile number",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Date of Birth",
+        "key": "dateofbirth",
+        "description": "This date of birth is description is the date of birth is description is the date of birth is description is the",
+        "class": "",
+        "type": "date",
+        "required": true,
+        "placeholder": "Please enter the date of birth",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Password",
+        "key": "password",
+        "description": "This password is description is the password is description is the password is description is the",
+        "class": "",
+        "type": "password",
+        "required": true,
+        "placeholder": "Please enter the password",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Website URL",
+        "key": "websiteurl",
+        "description": "This website URL is description is the website URL is description is the website URL is description is the",
+        "class": "",
+        "type": "url",
+        "required": true,
+        "placeholder": "Please enter the website URL",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Phone Number",
+        "key": "phonenumber",
+        "description": "This phone number is description is the phone number is description is the phone number is description is the",
+        "class": "",
+        "type": "tel",
+        "required": true,
+        "placeholder": "Please enter the phone number",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Meeting Time",
+        "key": "meetingtime",
+        "description": "This meeting time is description is the meeting time is description is the meeting time is description is the",
+        "class": "",
+        "type": "time",
+        "required": true,
+        "placeholder": "Please enter the meeting time",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Event Date and Time",
+        "key": "eventdatetime",
+        "description": "This event date and time is description is the event date and time is description is the event date and time is description is the",
+        "class": "",
+        "type": "datetime-local",
+        "required": true,
+        "placeholder": "Please enter the event date and time",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Month",
+        "key": "month",
+        "description": "This month is description is the month is description is the month is description is the",
+        "class": "",
+        "type": "month",
+        "required": true,
+        "placeholder": "Please enter the month",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Week",
+        "key": "week",
+        "description": "This week is description is the week is description is the week is description is the",
+        "class": "",
+        "type": "week",
+        "required": true,
+        "placeholder": "Please enter the week",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Favorite Color",
+        "key": "favoritecolor",
+        "description": "This favorite color is description is the favorite color is description is the favorite color is description is the",
+        "class": "",
+        "type": "color",
+        "required": true,
+        "placeholder": "Please enter the favorite color",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "input",
+        "label": "Profile Picture",
+        "key": "profilepicture",
+        "description": "This profile picture is description is the profile picture is description is the profile picture is description is the",
+        "class": "",
+        "required": true,
+        "placeholder": "Please upload your profile picture",
+        "gridClass": "col-span-12 md:col-span-6",
+        "value": ""
+    },
+    {
+        "inputType": "select",
+        "label": "select",
+        "key": "emadsil",
+        "description": "This email is description is the email is description is the email is description is the",
+        "class": "",
+        "type": "email",
+        "required": true,
+        "placeholder": "Please enter the email",
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "gridClass": "col-span-12",
+        "disabled": false,
+        "value": "",
+        "rows": 4,
+        "resize": "none",
+        "cols": 4,
+        "options": [
+            {
+                "name": "Phaneendra",
+                "value": "shane"
+            },
+            {
+                "name": "Phaneendra1",
+                "value": "shane1"
+            },
+            {
+                "name": "Phaneendra2",
+                "value": "shane2"
+            },
+            {
+                "name": "Phaneendra3",
+                "value": "shane3"
+            },
+            {
+                "name": "Phaneendra4",
+                "value": "shane4"
+            }
+        ]
+    },
+    {
+        "inputType": "textarea",
+        "label": "Email",
+        "key": "emadil",
+        "description": "This email is description is the email is description is the email is description is the",
+        "class": "",
+        "type": "email",
+        "required": true,
+        "placeholder": "Please enter the email",
+        "pattern": "^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$",
+        "gridClass": "col-span-12",
+        "disabled": false,
+        "value": "",
+        "rows": 4,
+        "resize": "none",
+        "cols": 4
+    }
+]
