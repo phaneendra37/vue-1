@@ -3,7 +3,7 @@
     class="overflow-hidden flex flex-col h-full"
     @submit.prevent="submitForm"
   >
-    <div class="grow p-6 overflow-auto">
+    <div class="grow p-6 overflow-auto scroll-smooth">
       <div
         v-if="formFields && formFields?.length"
         class="grid gap-5 grid-cols-1 md:grid-cols-12"
@@ -88,7 +88,9 @@
     </div>
     <div class="flex border-t py-3 px-6 bg-white justify-end gap-x-4">
       <!-- start of save button -->
-      <button class="btn-secondary">Cancel</button>
+      <button class="btn-secondary" @click.prevent="emit('cancel')">
+        Cancel
+      </button>
       <!-- end of save button -->
       <!-- start of save button -->
       <button type="submit" class="btn-primary">Save</button>

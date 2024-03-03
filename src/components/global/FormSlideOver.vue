@@ -2,7 +2,11 @@
   <Canvas v-bind="FormJson?.sidebar" :isShow="sidebar" @close="closeSidebar">
     <template #body>
       <!-- form container -->
-      <FormContainer :fields="formJson" @receive-data="updateData" />
+      <FormContainer
+        :fields="formJson"
+        @receive-data="updateData"
+        @cancel="closeSidebar"
+      />
     </template>
   </Canvas>
 </template>
