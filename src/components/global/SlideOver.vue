@@ -103,10 +103,10 @@
                 <!-- start of the header content  -->
                 <div v-if="isHeader" :class="headerClass">
                   <slot name="header">
-                    <h3 class="font-[700] text-sm text-white mb-1">
+                    <h3 class="font-[500] text-sm text-white mb-0.5">
                       {{ title }}
                     </h3>
-                    <p class="text-xs text-gray-100">{{ subTitle }}</p>
+                    <p class="text-[10px] text-gray-200">{{ subTitle }}</p>
                   </slot>
                 </div>
                 <!-- end of the header content -->
