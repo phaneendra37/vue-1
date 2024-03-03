@@ -13,7 +13,7 @@ body {
 }
 
 .btn-primary {
-    @apply px-6 py-2 rounded border-2 border-neutral-900 bg-neutral-900 text-white text-sm font-semibold hover:bg-white hover:text-neutral-900 duration-500 transition-all capitalize
+    @apply px-6 py-2 rounded border-2 border-neutral-900 bg-neutral-900 text-white text-sm font-[500] hover:bg-white hover:text-neutral-900 duration-500 transition-all capitalize
 }
 
 .btn-secondary {

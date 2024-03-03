@@ -2,12 +2,11 @@
   <div :class="item?.fieldClass" class="grow relative">
     <!-- start of textarea field -->
     <textarea
-      v-if="item?.inputType == 'textarea'"
+      v-if="item?.inputType === 'textarea'"
       :placeholder="item?.placeholder"
       :disabled="item?.disabled"
       :id="item?.key"
       :value="item?.value"
-      @input="updateValue(index, $event.target.value)"
       :readonly="item?.readonly"
       :pattern="item?.pattern"
       :autofocus="item?.autofocus"
@@ -25,6 +24,7 @@
       :class="{
         'resize-none ': item?.resize,
       }"
+      @input="updateValue($event.target.value, index, subindex)"
     />
     <!-- end of textarea field -->
 
@@ -34,7 +34,6 @@
       :disabled="item?.disabled"
       :id="item?.key"
       :value="item?.value"
-      @change="updateValue(index, $event.target.value)"
       :readonly="item?.readonly"
       :required="item?.required"
       class="form-input"
@@ -45,6 +44,7 @@
         'resize-none ': item?.resize,
       }"
       :multiple="item?.multiple"
+      @input="updateValue($event.target.value, index, subindex)"
     >
       <!-- start of select options -->
       <template v-if="item?.options && item?.options?.length">
@@ -84,7 +84,6 @@
         :type="item?.type"
         :id="item?.key"
         :value="item?.value"
-        @input="updateValue(index, $event.target.value)"
         :readonly="item?.readonly"
         :pattern="item?.pattern"
         :autofocus="item?.autofocus"
@@ -104,24 +103,37 @@
           '!pl-10': item?.icon && item?.iconPlacement === 'left',
           '!pr-10': item?.icon && item?.iconPlacement === 'right',
         }"
+        @input="updateValue($event.target.value, index, subindex)"
       />
     </template>
     <!-- end of input element -->
   </div>
 </template>
 <script setup>
-import { defineProps, ref } from "vue";
+// Importing necessary Vue features
+import { defineProps, defineEmits } from "vue";
 
-const props = defineProps({
+// Defining props received by the component
+defineProps({
   item: {
     type: Object,
     required: true,
   },
+  index: {
+    type: Number,
+    required: true,
+  },
+  subindex: {
+    type: Number,
+  },
 });
 
-const formFields = ref(props.item);
+// Defining emit function to emit events
+const emit = defineEmits(["update-value"]);
 
-const updateValue = (index, value) => {
-  formFields.value = value;
+// Function to update the value of a field
+const updateValue = (value, index, subindex) => {
+  // Emitting 'update-value' event with the new value
+  emit("update-value", value, index, subindex);
 };
 </script>
