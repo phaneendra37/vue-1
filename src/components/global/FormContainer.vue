@@ -3,7 +3,7 @@
     class="overflow-hidden flex flex-col h-full"
     @submit.prevent="submitForm"
   >
-    <div class="grow p-6 overflow-auto scroll-smooth">
+    <div class="grow p-6 overflow-auto scroll-smooth form-container">
       <div
         v-if="formFields && formFields?.length"
         class="grid gap-5 grid-cols-1 md:grid-cols-12"
@@ -86,7 +86,10 @@
         </div>
       </div>
     </div>
-    <div class="flex border-t py-3 px-6 bg-white justify-end gap-x-4">
+    <div
+      v-if="footer"
+      class="flex border-t py-3 px-6 bg-white justify-end gap-x-4"
+    >
       <!-- start of save button -->
       <button class="btn-secondary" @click.prevent="emit('cancel')">
         Cancel
@@ -108,6 +111,10 @@ const props = defineProps({
   fields: {
     type: Array,
     required: true,
+  },
+  footer: {
+    type: Boolean,
+    default: true,
   },
 });
 // Defining emit function to emit events
@@ -138,6 +145,7 @@ const updateValue = (data, index, subindex) => {
 
 // Function to update form values based on form fields
 const updateObjectValues = () => {
+  if (!formFields?.value?.length) return;
   // Clear existing form values
   formValues.value = {};
   // Iterate through form fields to update form values
