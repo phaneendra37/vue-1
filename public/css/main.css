@@ -69,3 +69,45 @@ input[type="number"]::-webkit-outer-spin-button {
     }
 
 }
+
+.Toastify__toast {
+    border-radius: 11px !important;
+    border: 1px solid #ebebeb !important;
+    box-shadow: 0 14px 40px rgba(30, 10, 58, .1) !important;
+    padding: 20px !important;
+    font-family: inherit !important;
+    font-size: 13.3px;
+    margin-bottom: 8px !important;
+    cursor: auto !important;
+}
+
+.Toastify__toast-body {
+    padding: 0px !important;
+    align-items: start !important;
+    line-height: 20px;
+    column-gap: 16px !important;
+}
+
+.Toastify__toast-icon {
+    margin-right: 0px !important;
+    margin-top: 5px !important;
+}
+
+.Toastify__progress-bar {
+    height: 2px !important;
+    width: calc(100% + 2px) !important;
+    font-family: inherit !important;
+}
+
+.toast-heading {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: -16px !important;
+    display: block;
+    color: #646464;
+    text-transform: capitalize;
+}
+
+.Toastify__toast-container {
+    transition: all 0.5s ease !important;
+}

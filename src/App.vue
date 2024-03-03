@@ -1,23 +1,44 @@
 <template>
   <div>
     <button class="btn-primary" @click="show()">Show Modal</button>
-    {{ isOkay }}
-    <Modal
-      ref="confirmation"
-      text="phaneendra kumar"
-      heading="Are you sure you want to proceed?"
-      description="By confirmation you will lose the record, it will not be return once deleted the data."
-    />
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import Modal from "@/components/global/confirmationModal.vue";
-const confirmation = ref(null);
-const isOkay = ref(false);
+import { showToast, loadingToast, closeToast } from "@/js/Toaster.js";
 const show = async () => {
-  const test = await confirmation.value.showModal();
-  isOkay.value = test;
+  showToast(
+    "success",
+    "Hey success Toast",
+    "This is the message that we need to share"
+  );
+  setTimeout(() => {
+    showToast(
+      "error",
+      "Hey error Toast",
+      "This is the message that we need to share"
+    );
+  }, 1000);
+
+  setTimeout(() => {
+    showToast(
+      "info",
+      "Hey info Toast",
+      "This is the message that we need to share"
+    );
+  }, 2000);
+
+  setTimeout(() => {
+    showToast(
+      "warning",
+      "Hey warning Toast",
+      "This is the message that we need to share"
+    );
+  }, 3000);
+
+  const id = loadingToast("we are fetching the details.");
+  setTimeout(() => {
+    closeToast(id);
+  }, 2000);
 };
 </script>
