@@ -1,9 +1,9 @@
 <template>
-  <Canvas v-bind="FormJson?.sidebar" :isShow="sidebar" @close="closeSidebar">
+  <Canvas v-bind="formJson?.sidebar" :isShow="show" @close="closeSidebar">
     <template #body>
       <!-- form container -->
       <FormContainer
-        :fields="formJson"
+        :fields="formJson?.fields"
         @receive-data="updateData"
         @cancel="closeSidebar"
       />
@@ -14,30 +14,36 @@
 import { ref, onMounted, defineProps, defineEmits } from "vue";
 import Canvas from "./SlideOver.vue";
 import FormContainer from "./FormContainer.vue";
-import FormJson from "@/json/form.json";
+import testForm from "@/json/form.json";
 
 const props = defineProps({
+  show: {
+    type: Boolean,
+    default: false,
+  },
   item: {
     type: Object,
+  },
+  fieldJson: {
+    type: Object,
+    default: () => testForm, // Assuming formJson is defined somewhere
   },
 });
 const emit = defineEmits(["close"]);
 // to show and hide the sidebar
-const sidebar = ref(true);
-const formValues = ref({});
+const formValues = ref();
 
 // getting the fields from json
-const formJson = ref(FormJson?.fields);
-
+const formJson = ref(props?.fieldJson);
 const updateData = (data) => {
-  formValues.value = data;
-  closeSidebar();
+  formValues.value = data?.value;
+  emit("save", formValues.value);
 };
 
 const PopulateData = () => {
   if (props.item && Object.keys(props.item)?.length) {
     // Iterate over each object in the formJson array
-    formJson.value.forEach((obj) => {
+    formJson?.value?.fields.forEach((obj) => {
       obj.value = props.item[obj?.key];
       if (obj?.group && obj?.group?.length) {
         obj.group.forEach((subKey) => {
@@ -48,7 +54,7 @@ const PopulateData = () => {
   }
 };
 const closeSidebar = () => {
-  sidebar.value = false;
+  PopulateData();
   emit("close");
 };
 onMounted(PopulateData);

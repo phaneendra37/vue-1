@@ -44,7 +44,6 @@ export async function useData(method, api, data) {
     }
     // if any runtime or server errors will handle here
     catch (error) {
-
         // let initialize the error message
         var error_message = 'An error occurred';
 

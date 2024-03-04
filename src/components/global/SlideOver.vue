@@ -30,7 +30,7 @@
           :class="
             isSidebar
               ? 'pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10'
-              : 'flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0'
+              : 'flex min-h-full justify-center p-4 text-center items-center sm:p-0'
           "
         >
           <!-- start of transition child for the white screen-->

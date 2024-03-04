@@ -75,15 +75,18 @@ const showModal = async () => {
 // Function to confirm the action and close the modal
 const confirm = () => {
   modalPromiseResolve(true);
-  show.value = false;
 };
 
 // Function to cancel the action and close the modal
 const cancel = () => {
   modalPromiseResolve(false);
+  hideModal();
+};
+
+const hideModal = () => {
   show.value = false;
 };
 
 // Expose the showModal function to parent components
-defineExpose({ showModal });
+defineExpose({ showModal, hideModal });
 </script>

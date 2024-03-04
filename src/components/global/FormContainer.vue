@@ -91,7 +91,11 @@
       class="flex border-t py-3 px-6 bg-white justify-end gap-x-4"
     >
       <!-- start of save button -->
-      <button class="btn-secondary" @click.prevent="emit('cancel')">
+      <button
+        type="button"
+        class="btn-secondary"
+        @click.prevent="emit('cancel')"
+      >
         Cancel
       </button>
       <!-- end of save button -->
