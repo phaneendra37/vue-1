@@ -1,0 +1,5 @@
+{
+    "limit": 30,
+    "getUrl": "https://three7apps.onrender.com/auth/v2/pre_auth",
+    "isBodyScroll": true
+}
