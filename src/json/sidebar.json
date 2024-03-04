@@ -1,0 +1,36 @@
+{
+    "fields": [
+        {
+            "inputType": "input",
+            "key": "id",
+            "value": "",
+            "class": "hidden "
+        },
+        {
+            "gridClass": "col-span-12",
+            "inputType": "input",
+            "label": "Email",
+            "placeholder": "Please enter the email",
+            "key": "email",
+            "value": "",
+            "description": "Including a descriptive email summary can help recipients quickly understand the purpose or key points of an email"
+        },
+        {
+            "gridClass": "col-span-12",
+            "inputType": "input",
+            "label": "Password",
+            "placeholder": "Please enter OTP",
+            "key": "otp",
+            "value": "",
+            "description": "It seems like you've mentioned 'password' without any context or request."
+        }
+    ],
+    "sidebar": {
+        "title": "Edit User",
+        "subTitle": "Edit the user email and OTP and save data",
+        "bodyClass": "p-0 bg-gray-50",
+        "size": "w-full md:w-[400px]",
+        "isSidebar": true,
+        "isFooter": false
+    }
+}
