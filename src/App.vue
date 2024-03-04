@@ -1,42 +1,26 @@
 <template>
-  <div class="max-w-7xl mx-auto py-4">
+  <div class="max-w-7xl mx-auto py-4 flex gap-x-6 items-center">
     <button class="btn-primary" @click="show()">Show Modal</button>
-    <PhotoSwipe :images="images" id="phaneendra" />
+    <div v-if="users && users?.length">{{ users }}</div>
+    <div v-else>PLease wait...</div>
   </div>
 </template>
 
 <script setup>
-import { prideConfetti } from "@/js/Confetti.js";
-import { showToast, closeToast } from "@/js/Toaster.js";
-import PhotoSwipe from "@/components/global/ImagesGallery.vue";
-const images = [
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRratY6b5JzFXRWmdslP9qOpmqX65sn5_LXQQ&usqp=CAU",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcqGbFtMpQ4rEXvNMcx069IdUCAa2J3EXvtw&usqp=CAU",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA4lsMtFaM-NFoqECsbV2XNp5H_rrX53N2tB6OmhD5IxEW9BglkMCLVpIVnXw0L35Yiq8&usqp=CAU",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkPjr88f2-QQ0ZP6zG3DK7a7UwvGUVuEvFyA&usqp=CAU",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrFIhTZdH-SuGwBR814Ss52JgL5QIzKaogsQ&usqp=CAU",
-  },
-];
-
+import { ref } from "vue";
+import { useData } from "@/js/Data.js";
+import { showToast } from "@/js/Toaster.js";
+const users = ref([]);
 const show = async () => {
-  prideConfetti();
-  const id = showToast("success", "Confetti", "Hey this is the pride confetti");
-  setTimeout(() => {
-    closeToast(id);
-  }, 4500);
+  try {
+    const data = await useData(
+      "get",
+      "https://three7apps.onrender.com/auth/v2/pre_auth",
+      { email: "kphaneendta337@gma.com", otp: 452112 }
+    );
+    users.value = data;
+  } catch (error) {
+    showToast("error", "Failed to fetch", error?.message);
+  }
 };
 </script>

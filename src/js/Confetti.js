@@ -2,7 +2,7 @@ import confetti from 'canvas-confetti';
 // Function to create a pride-themed confetti effect
 export function prideConfetti() {
     // Define default options for confetti particles
-    const defaultOptions = { particleCount: 20, spread: 55 };
+    const defaultOptions = { particleCount: 10, spread: 55 };
 
     // Start confetti on the left side at an angle of 60 degrees and origin at x = 0,
     // repeating every 150ms (0.15 seconds)
