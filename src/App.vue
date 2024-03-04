@@ -5,9 +5,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
+import { prideConfetti } from "@/js/Confetti.js";
 import FormFields from "@/json/sidebar.json";
 import infinityScroll from "./components/global/infinityScroll.vue";
 import infinityJson from "@/json/infinity.json";
 const jsonData = ref(infinityJson);
+onMounted(prideConfetti);
 </script>
